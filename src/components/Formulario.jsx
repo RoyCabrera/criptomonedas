@@ -24,12 +24,13 @@ const Boton = styled.input`
         }
     `
 
-const Formulario = () => {
+const Formulario = ({setMoneda,setCriptomoneda}) => {
 
     const [error, setError] = useState(false);
     const [listacripto,setListaCripto] = useState([]);
     const MONEDAS = [
-
+        
+        {codigo:'PEN',nombre:'Sol Peruano'},
         {codigo:'USD',nombre:'Dolar de Estados Unidos'},
         {codigo:'MXN',nombre:'Peso Mexicano'},
         {codigo:'EUR',nombre:'Euro'},
@@ -65,6 +66,8 @@ const Formulario = () => {
         }
 
         setError(false);
+        setMoneda(moneda);
+        setCriptomoneda(criptomoneda);
     }
 
     return(
